@@ -27,9 +27,11 @@ class Consumo(models.Model):
     classe = models.ForeignKey(Classe, null=False)
     horario = models.DateField(default=datetime.now)
     refeicao = models.ForeignKey(Refeicao, null=False)
+    data = models.DateField(default=datetime.now)
 
 
 class Operacao(models.Model):
     operador = models.ForeignKey(User, null=False)
     conta = models.ForeignKey(Conta, null=False)
     tipo_operacao=models.IntegerField(choices=TIPO_OPERACAO, null=False)
+    data = models.DateField(default=datetime.now)
